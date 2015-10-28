@@ -1,0 +1,545 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    
+    <script src='C:/R/R-3.2.2/library/rCharts/libraries/datamaps/js/d3.v3.min.js' type='text/javascript'></script>
+    <script src='C:/R/R-3.2.2/library/rCharts/libraries/datamaps/js/topojson.v1.min.js' type='text/javascript'></script>
+    <script src='C:/R/R-3.2.2/library/rCharts/libraries/datamaps/js/datamaps.all.min.js' type='text/javascript'></script>
+    <script src='datamaps.all.min.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 800px;
+      height: 400px;
+    }  
+    </style>
+    
+  </head>
+  <body >
+    
+    <div id = 'chart_1' class = 'rChart datamaps'></div>    
+    <script id='popup-template' type='text/x-handlebars-template'>
+    
+</script>
+<script>
+  var chartParams = {
+ "dom": "chart_1",
+"width":    800,
+"height":    400,
+"scope": "world",
+"projection": "mercator",
+"fills": {
+ "Confirmed": [ "#2ca25f" ],
+"Pending Confirmation": [ "#fdbb84" ],
+"defaultFill": [ "#f0f0f0" ] 
+},
+"data": {
+ "AFG": {
+ "Country": "Afghanistan",
+"Code": "AFG",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"ALB": {
+ "Country": "Albania",
+"Code": "ALB",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"AGO": {
+ "Country": "Angola",
+"Code": "AGO",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"ARM": {
+ "Country": "Armenia",
+"Code": "ARM",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"BGD": {
+ "Country": "Bangladesh",
+"Code": "BGD",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"BLR": {
+ "Country": "Belarus",
+"Code": "BLR",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"BEN": {
+ "Country": "Benin",
+"Code": "BEN",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"BTN": {
+ "Country": "Bhutan",
+"Code": "BTN",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"BOL": {
+ "Country": "Bolivia",
+"Code": "BOL",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"BFA": {
+ "Country": "Burkina Faso",
+"Code": "BFA",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"BDI": {
+ "Country": "Burundi",
+"Code": "BDI",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"KHM": {
+ "Country": "Cambodia",
+"Code": "KHM",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"CMR": {
+ "Country": "Cameroon",
+"Code": "CMR",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"CAF": {
+ "Country": "Central African Republic",
+"Code": "CAF",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"COL": {
+ "Country": "Colombia",
+"Code": "COL",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"CRI": {
+ "Country": "Costa Rica",
+"Code": "CRI",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"CIV": {
+ "Country": "C�te D'Ivoire",
+"Code": "CIV",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"DOM": {
+ "Country": "Dominican Republic",
+"Code": "DOM",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"COD": {
+ "Country": "Democratic Republic of Congo",
+"Code": "COD",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"EGY": {
+ "Country": "Egypt",
+"Code": "EGY",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"SLV": {
+ "Country": "El Salvador",
+"Code": "SLV",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"ETH": {
+ "Country": "Ethiopia",
+"Code": "ETH",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"FJI": {
+ "Country": "Fiji",
+"Code": "FJI",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"GAB": {
+ "Country": "Gabon",
+"Code": "GAB",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"GHA": {
+ "Country": "Ghana",
+"Code": "GHA",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"GTM": {
+ "Country": "Guatemala",
+"Code": "GTM",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"GIN": {
+ "Country": "Guinea (Republic of)",
+"Code": "GIN",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"GNB": {
+ "Country": "Guinea Bissau",
+"Code": "GNB",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"HND": {
+ "Country": "Honduras",
+"Code": "HND",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"KEN": {
+ "Country": "Kenya",
+"Code": "KEN",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"KIR": {
+ "Country": "Kiribati",
+"Code": "KIR",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"NCW": {
+ "Country": "Kosovo",
+"Code": "NCW",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"KGZ": {
+ "Country": "Kyrgyz Republic",
+"Code": "KGZ",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"LAO": {
+ "Country": "Lao",
+"Code": "LAO",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"MDG": {
+ "Country": "Madagascar",
+"Code": "MDG",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"MWI": {
+ "Country": "Malawi",
+"Code": "MWI",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"MLI": {
+ "Country": "Mali",
+"Code": "MLI",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"MRT": {
+ "Country": "Mauritania",
+"Code": "MRT",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"MEX": {
+ "Country": "Mexico",
+"Code": "MEX",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"FSM": {
+ "Country": "Micronesia",
+"Code": "FSM",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"MDA": {
+ "Country": "Moldova",
+"Code": "MDA",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"MNG": {
+ "Country": "Mongolia",
+"Code": "MNG",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"MOZ": {
+ "Country": "Mozambique",
+"Code": "MOZ",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"MMR": {
+ "Country": "Myanmar",
+"Code": "MMR",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"NPL": {
+ "Country": "Nepal",
+"Code": "NPL",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"NER": {
+ "Country": "Niger (Republic of)",
+"Code": "NER",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"NGA": {
+ "Country": "Nigeria",
+"Code": "NGA",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"PAK": {
+ "Country": "Pakistan",
+"Code": "PAK",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"PAN": {
+ "Country": "Panama",
+"Code": "PAN",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"PNG": {
+ "Country": "Papua New Guinea",
+"Code": "PNG",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"PRY": {
+ "Country": "Paraguay",
+"Code": "PRY",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"PER": {
+ "Country": "Peru",
+"Code": "PER",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"PHL": {
+ "Country": "Philippines",
+"Code": "PHL",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"RWA": {
+ "Country": "Rwanda",
+"Code": "RWA",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"WSM": {
+ "Country": "Samoa",
+"Code": "WSM",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"STP": {
+ "Country": "S�o Tom� & Pr�ncipe",
+"Code": "STP",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"SEN": {
+ "Country": "Senegal",
+"Code": "SEN",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"SLE": {
+ "Country": "Sierra Leone",
+"Code": "SLE",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"SLB": {
+ "Country": "Solomon Islands",
+"Code": "SLB",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"SOM": {
+ "Country": "Somalia",
+"Code": "SOM",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"SDS": {
+ "Country": "South Sudan",
+"Code": "SDS",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"SDN": {
+ "Country": "Sudan",
+"Code": "SDN",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"TJK": {
+ "Country": "Tajikistan",
+"Code": "TJK",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"TZA": {
+ "Country": "Tanzania",
+"Code": "TZA",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"TCD": {
+ "Country": "Chad",
+"Code": "TCD",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"TLS": {
+ "Country": "Timor Leste",
+"Code": "TLS",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"TGO": {
+ "Country": "Togo",
+"Code": "TGO",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"TON": {
+ "Country": "Tonga",
+"Code": "TON",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"TUV": {
+ "Country": "Tuvalu",
+"Code": "TUV",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"UGA": {
+ "Country": "Uganda",
+"Code": "UGA",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"URY": {
+ "Country": "Uruguay",
+"Code": "URY",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"UZB": {
+ "Country": "Uzbekistan",
+"Code": "UZB",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"VUT": {
+ "Country": "Vanuatu",
+"Code": "VUT",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"VNM": {
+ "Country": "Vietnam",
+"Code": "VNM",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"YEM": {
+ "Country": "Yemen",
+"Code": "YEM",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+},
+"ZMB": {
+ "Country": "Zambia",
+"Code": "ZMB",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+} 
+},
+"legend": true,
+"labels": false,
+"id": "chart_1" 
+}
+  chartParams.element = document.getElementById('chart_1')
+  
+  
+  var mapchart_1 = new Datamap(chartParams);
+  
+  
+    
+  // draw a bubble map if specified
+  if (chartParams.bubbles) {
+    var bubbles = chartParams.bubbles
+    mapchart_1.bubbles(bubbles)
+  }
+  
+  if (chartParams.labels){
+    mapchart_1.labels()
+  }
+  
+  if (chartParams.legend){
+    mapchart_1.legend()
+  }
+  
+  setProjection = function( element, options ) {
+    var projection, path;
+ 
+      projection = d3.geo.albersUsa()
+        .scale(element.offsetWidth)
+        .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+ 
+    path = d3.geo.path()
+      .projection( projection );
+ 
+    return {path: path, projection: projection};
+  }
+</script>
+
+<style>
+.datamaps {
+  position: relative;
+}
+</style>
+    
+    <script></script>    
+  </body>
+</html>
