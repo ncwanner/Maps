@@ -2,26 +2,25 @@
 <meta charset = 'utf-8'>
 <html>
   <head>
-    <script src='http://d3js.org/d3.v3.min.js' type='text/javascript'></script>
-    <script src='http://d3js.org/topojson.v1.min.js' type='text/javascript'></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js' type='text/javascript'></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js' type='text/javascript'></script>
-    <script src='http://rawgit.com/ncwanner/Maps/master/Map.js' type='text/javascript'></script>    
+    
+    <script src='C:/R/R-3.2.2/library/rCharts/libraries/datamaps/js/d3.v3.min.js' type='text/javascript'></script>
+    <script src='C:/R/R-3.2.2/library/rCharts/libraries/datamaps/js/topojson.v1.min.js' type='text/javascript'></script>
+    <script src='C:/R/R-3.2.2/library/rCharts/libraries/datamaps/js/datamaps.all.min.js' type='text/javascript'></script>
+    <script src='datamaps.all.min.js' type='text/javascript'></script>
     
     <style>
-    
-     .rChart {
+    .rChart {
       display: block;
       margin-left: auto; 
       margin-right: auto;
-      width: 600px;
+      width: 800px;
       height: 400px;
     }  
     </style>
     
   </head>
   <body >
-
+    
     <div id = 'chart_1' class = 'rChart datamaps'></div>    
     <script id='popup-template' type='text/x-handlebars-template'>
     
@@ -29,7 +28,7 @@
 <script>
   var chartParams = {
  "dom": "chart_1",
-"width":    600,
+"width":    800,
 "height":    400,
 "scope": "world",
 "projection": "mercator",
@@ -54,8 +53,8 @@
 "AGO": {
  "Country": "Angola",
 "Code": "AGO",
-"Status": "Pending Confirmation",
-"fillKey": "Pending Confirmation" 
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
 },
 "ARM": {
  "Country": "Armenia",
@@ -90,8 +89,8 @@
 "BOL": {
  "Country": "Bolivia",
 "Code": "BOL",
-"Status": "Pending Confirmation",
-"fillKey": "Pending Confirmation" 
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
 },
 "BFA": {
  "Country": "Burkina Faso",
@@ -132,11 +131,11 @@
 "CRI": {
  "Country": "Costa Rica",
 "Code": "CRI",
-"Status": "Pending Confirmation",
-"fillKey": "Pending Confirmation" 
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
 },
 "CIV": {
- "Country": "C�te D'Ivoire",
+ "Country": "Côte D'Ivoire",
 "Code": "CIV",
 "Status": "Confirmed",
 "fillKey": "Confirmed" 
@@ -189,6 +188,13 @@
 "Status": "Pending Confirmation",
 "fillKey": "Pending Confirmation" 
 },
+"GMB": {
+ "Country": "Gambia",
+"Code": "GMB",
+"Status": "Pending Confirmation",
+"fillKey": "Pending Confirmation" 
+} 
+},
 "GTM": {
  "Country": "Guatemala",
 "Code": "GTM",
@@ -234,8 +240,8 @@
 "KGZ": {
  "Country": "Kyrgyz Republic",
 "Code": "KGZ",
-"Status": "Pending Confirmation",
-"fillKey": "Pending Confirmation" 
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
 },
 "LAO": {
  "Country": "Lao",
@@ -300,8 +306,8 @@
 "MMR": {
  "Country": "Myanmar",
 "Code": "MMR",
-"Status": "Pending Confirmation",
-"fillKey": "Pending Confirmation" 
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
 },
 "NPL": {
  "Country": "Nepal",
@@ -330,8 +336,8 @@
 "PAN": {
  "Country": "Panama",
 "Code": "PAN",
-"Status": "Pending Confirmation",
-"fillKey": "Pending Confirmation" 
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
 },
 "PNG": {
  "Country": "Papua New Guinea",
@@ -370,10 +376,10 @@
 "fillKey": "Confirmed" 
 },
 "STP": {
- "Country": "S�o Tom� & Pr�ncipe",
+ "Country": "São Tomé & Príncipe",
 "Code": "STP",
-"Status": "Pending Confirmation",
-"fillKey": "Pending Confirmation" 
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
 },
 "SEN": {
  "Country": "Senegal",
@@ -399,9 +405,9 @@
 "Status": "Confirmed",
 "fillKey": "Confirmed" 
 },
-"SSD": {
+"SDS": {
  "Country": "South Sudan",
-"Code": "SSD",
+"Code": "SDS",
 "Status": "Confirmed",
 "fillKey": "Confirmed" 
 },
@@ -450,8 +456,8 @@
 "TUV": {
  "Country": "Tuvalu",
 "Code": "TUV",
-"Status": "Pending Confirmation",
-"fillKey": "Pending Confirmation" 
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
 },
 "UGA": {
  "Country": "Uganda",
@@ -462,8 +468,8 @@
 "URY": {
  "Country": "Uruguay",
 "Code": "URY",
-"Status": "Pending Confirmation",
-"fillKey": "Pending Confirmation" 
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
 },
 "UZB": {
  "Country": "Uzbekistan",
@@ -486,15 +492,20 @@
 "YEM": {
  "Country": "Yemen",
 "Code": "YEM",
-"Status": "Pending Confirmation",
-"fillKey": "Pending Confirmation" 
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
 },
 "ZMB": {
  "Country": "Zambia",
 "Code": "ZMB",
+"Status": "Confirmed",
+"fillKey": "Confirmed" 
+},
+"ZWE": {
+ "Country": "Zimbabwe",
+"Code": "ZWE",
 "Status": "Pending Confirmation",
 "fillKey": "Pending Confirmation" 
-} 
 },
 "legend": true,
 "labels": false,
